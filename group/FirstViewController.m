@@ -232,6 +232,7 @@
         [webView getWebViewLbaleWith:_readContent.share_url];
         webView.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:webView animated:YES];
+        //dfghetyujtyjtyhj
     }
     
 }
