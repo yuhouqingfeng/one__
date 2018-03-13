@@ -10,4 +10,15 @@
 
 @interface ONEViewCell : UITableViewCell
 
+@property(nonatomic ,strong) UILabel * themeLabel;
+@property(nonatomic ,strong) UILabel * titleLabel;
+@property(nonatomic ,strong) UILabel * personLabel;
+@property(nonatomic ,strong) UIImageView * pictureImage;
+@property(nonatomic ,strong) UILabel * articleLabel;
+
+@property(nonatomic ,strong) UILabel * dayLabel;
+@property(nonatomic ,strong) UIButton * praiseBtn;
+@property(nonatomic ,strong) UILabel *praiseLable;
+@property(nonatomic ,strong) UIButton * shareBtn;
+
 @end

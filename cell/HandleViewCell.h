@@ -10,4 +10,6 @@
 
 @interface HandleViewCell : UITableViewCell
 
+@property (nonatomic ,strong) UILabel * textlabel;
+
 @end

@@ -7,17 +7,62 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "ONEViewController.h"
+#import "ALLViewController.h"
+#import "MEViewController.h"
 
 @interface AppDelegate ()
+{
+    UITabBarController * group;
+}
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds ];
+
+    [self.window makeKeyAndVisible];
+    //one
+    UINavigationController * oneViewController = [[UINavigationController alloc] initWithRootViewController:[[ONEViewController alloc] init]];
+    oneViewController.tabBarItem.title = @"ONE";
+    oneViewController.tabBarItem.image = [UIImage imageNamed:@"one"];
+    oneViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"one_select"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //all
+    UINavigationController * allViewController = [[UINavigationController alloc] initWithRootViewController:[[ALLViewController alloc] init]];
+    allViewController.tabBarItem.title = @"ALL";
+    allViewController.tabBarItem.image = [UIImage imageNamed:@"all"];
+    allViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"all_select"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    //one
+    UINavigationController * meViewController = [[UINavigationController alloc] initWithRootViewController:[[MEViewController alloc] init]];
+    meViewController.tabBarItem.title = @"ME";
+    meViewController.tabBarItem.image = [UIImage imageNamed:@"me"];
+    meViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"me_select"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    [[UINavigationBar appearance ] setBarTintColor:[UIColor whiteColor] ];
+    [[UINavigationBar appearance ] setTranslucent:NO];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:18]} forState:UIControlStateSelected];
+    
+    group  = [[UITabBarController alloc] init];
+    group.viewControllers = [NSArray arrayWithObjects:oneViewController,allViewController,meViewController, nil];
+    
+    ViewController * view = [[ViewController alloc] init];
+    
+    self.window.rootViewController = view;
+    
+    [self performSelector:@selector(kaijidonghua) withObject:nil afterDelay:1.0f];
+    
     return YES;
+}
+- (void)kaijidonghua
+{
+    self.window.rootViewController = group;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

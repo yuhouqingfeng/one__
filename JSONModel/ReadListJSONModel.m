@@ -8,6 +8,42 @@
 
 #import "ReadListJSONModel.h"
 
+@implementation  ReadWeatherModel
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
+//@implementation ReadDataModel
+//
+//+(BOOL)propertyIsOptional:(NSString*)propertyName
+//{
+//    return YES;
+//}
+//@end
+
+@implementation ReadAuthorModel
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
+@implementation ReadContentModel
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
 @implementation ReadListJSONModel
 
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 @end

@@ -10,4 +10,7 @@
 
 @interface ALLViewCell : UITableViewCell
 
+@property (nonatomic ,strong) UIImageView * pictureView;
+@property (nonatomic ,strong) UILabel * textlabel;
+
 @end

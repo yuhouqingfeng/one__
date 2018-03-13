@@ -7,7 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ONEDataModel.h"
+#import "ReadListJSONModel.h"
 
-@interface SecondViewController : UIViewController
+@class ReadAuthorModel;
+@class ReadContentModel;
+@class ReadWeatherModel;
 
+@interface SecondViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic ,strong) UITableView * tableView;
+
+@property (nonatomic ,strong) ONEDataModel * oneDataModel;
+@property (nonatomic ,strong) ReadListJSONModel *  readListModel;
+@property (nonatomic ,strong) ReadWeatherModel * readWeather;
+@property (nonatomic ,strong) ReadAuthorModel * readAuthor;
+@property (nonatomic ,strong) ReadContentModel * readContent;
+
+@property (nonatomic ,copy) UIImageView * headerPicture;
+@property (nonatomic ,copy) UIButton * headerPraiseBtn;
+@property (nonatomic ,copy) UILabel * headerPraiseLabel;
+@property (nonatomic ,copy) UILabel * headerAuthorLabel;
+@property (nonatomic ,copy) UILabel * headerTextLabel;
+@property (nonatomic ,copy) UILabel * headerNameLabel;
+@property (nonatomic ,copy) UILabel * headerFindLabel;
+@property (nonatomic ,copy) UIImageView * headerFindImage;
+@property (nonatomic ,copy) UIButton * headerBtn1;
+@property (nonatomic ,copy) UIButton * headerBtn2;
+@property (nonatomic ,copy) UIButton * headerBtn3;
 @end

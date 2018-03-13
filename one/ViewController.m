@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIImageView * image = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    image.image = [UIImage imageNamed:@"封面.jpg"];
+    [self.view addSubview:image];
 }
 
 - (void)didReceiveMemoryWarning {

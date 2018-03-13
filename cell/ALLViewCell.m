@@ -7,9 +7,31 @@
 //
 
 #import "ALLViewCell.h"
+#define W  [UIScreen mainScreen].bounds.size.width
+#define H  [UIScreen mainScreen].bounds.size.height
+
 
 @implementation ALLViewCell
 
+-(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
+    {
+        self.pictureView = [[UIImageView alloc] init];
+        self.pictureView.frame = CGRectMake(10, 10, W-20,150);
+        [self.contentView addSubview:self.pictureView];
+        
+        self.textlabel = [[UILabel alloc] init];
+        self.textlabel.frame = CGRectZero;
+        [self.contentView addSubview:self.textlabel];
+    }
+    return self;
+}
+
+-(void) layoutSubviews
+{
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }
